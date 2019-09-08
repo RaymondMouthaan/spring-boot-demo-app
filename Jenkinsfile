@@ -37,9 +37,9 @@ pipeline {
         sh 'echo "Checking code quality..."'
       }
     }
-    stage('Security check SecTer') {
+    stage('Security check') {
       steps {
-        sh 'echo "Pushing code to SecTer and wait for approval..."'
+        sh 'echo "Pushing code to Security team and wait for approval..."'
       }
     }
     stage('Build Application') {
@@ -109,7 +109,7 @@ pipeline {
         skipDefaultCheckout()
       }
       steps {
-        sh 'curl https://cluster.indonesia:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
+        sh 'curl https://localhost:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
       }
     }
 //    stage('Cucumber / Selenide Test') {
