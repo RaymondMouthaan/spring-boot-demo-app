@@ -112,8 +112,8 @@ pipeline {
         skipDefaultCheckout()
       }
       steps {
-        sh 'curl -v --insecure https://cluster.indonesia:8443'
-        sh 'curl https://cluster.indonesia:8443/actuator/health -k -s'
+//        sh 'curl -v --insecure https://cluster.indonesia:8443'
+        sh 'curl https://cluster.indonesia:8443/actuator/health -k -S'
         sh 'ping cluster.indonesia -c 5'
       }
     }

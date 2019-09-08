@@ -6,3 +6,8 @@ server:
     key-store-password: bootsecurity
     keyStoreType: PKCS12
     key-alias: bootsecurity
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics
