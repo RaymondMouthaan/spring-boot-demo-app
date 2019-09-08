@@ -56,7 +56,6 @@ pipeline {
       steps {
         sh 'echo "Building demo application..."'
         sh 'mvn clean package -U'
-        sh 'ls -al'
       }
     }
     stage('Docker Build') {
@@ -101,18 +100,18 @@ pipeline {
 
       }
     }
-//    stage('Smoke Test') {
-//      agent any
-//      when {
-//        branch 'develop'
-//      }
-//      options {
-//        skipDefaultCheckout()
-//      }
-//      steps {
-//        sh 'curl https://cluster.indonesia:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
-//      }
-//    }
+    stage('Smoke Test') {
+      agent any
+      when {
+        branch 'develop'
+      }
+      options {
+        skipDefaultCheckout()
+      }
+      steps {
+        sh 'curl https://cluster.indonesia:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
+      }
+    }
 //    stage('Cucumber / Selenide Test') {
 //      agent any
 //      when {
