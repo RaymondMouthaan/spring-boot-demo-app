@@ -112,7 +112,7 @@ pipeline {
         skipDefaultCheckout()
       }
       steps {
-        sh 'curl https://cluster.indonesia:8443 -k -s'
+        sh 'curl https://cluster.indonesia:8443 -k -S'
         sh 'curl https://cluster.indonesia:8443/actuator/health -k -s'
         sh 'ping cluster.indonesia -c 5'
       }
