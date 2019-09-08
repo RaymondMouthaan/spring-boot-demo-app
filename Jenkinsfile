@@ -112,26 +112,8 @@ pipeline {
         skipDefaultCheckout()
       }
       steps {
-        sh 'curl https://localhost:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
+        sh 'curl https://cluster.indonesia:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
       }
     }
-//    stage('Cucumber / Selenide Test') {
-//      agent any
-//      when {
-//        branch 'develop'
-//      }
-//      steps {
-//        build 'demo-app-cucumber'
-//      }
-//    }
   }
-//  post {
-//    always {
-//      script {
-//        if (dockerContainer) {
-//          dockerContainer.stop()
-//        }
-//      }
-//    }
-//  }
 }
