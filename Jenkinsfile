@@ -10,7 +10,7 @@ pipeline {
       agent {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
-          args '--privileged=true -v maven-repo:/root/.m2'
+          args '--privileged=true -v /var/jenkins_home/maven-repo:/root/.m2'
         }
 
       }
@@ -23,7 +23,7 @@ pipeline {
       agent {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
-          args '--privileged=true -v maven-repo:/root/.m2'
+          args '--privileged=true -v /var/jenkins_home/maven-repo:/root/.m2'
         }
 
       }
@@ -46,7 +46,7 @@ pipeline {
       agent {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
-          args '--privileged=true -v maven-repo:/root/.m2'
+          args '--privileged=true -v /var/jenkins_home/maven-repo:/root/.m2'
         }
 
       }
