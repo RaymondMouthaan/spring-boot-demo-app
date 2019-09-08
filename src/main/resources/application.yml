@@ -1,0 +1,8 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:bootsecurity.p12
+    key-store-password: bootsecurity
+    keyStoreType: PKCS12
+    key-alias: bootsecurity
