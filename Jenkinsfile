@@ -113,6 +113,7 @@ pipeline {
       }
       steps {
         sh 'curl https://cluster.indonesia:8443 -k -s -f -o /dev/null && echo "SUCCESS" || echo "ERROR"'
+        sh 'ping cluster.indonesia -c 5'
       }
     }
   }
