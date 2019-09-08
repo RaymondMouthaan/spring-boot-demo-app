@@ -64,7 +64,7 @@ pipeline {
 
 
         stage('Docker Build') {
-            when { branch 'branches/dockerise' }
+            when { branch 'develop' }
             agent {
                 docker {
                     image 'docker'
@@ -80,7 +80,7 @@ pipeline {
         }
 
         stage('Docker Run') {
-            when { branch 'branches/dockerise' }
+            when { branch 'develop' }
             agent {
                 docker {
                     image 'docker'
@@ -96,7 +96,7 @@ pipeline {
         }
 
         stage('Smoke Test') {
-            when { branch 'branches/dockerise' }
+            when { branch 'develop' }
             agent any
             options { skipDefaultCheckout() }
             steps {
@@ -105,7 +105,7 @@ pipeline {
         }
 
         stage('Cucumber / Selenide Test') {
-            when { branch 'branches/dockerise' }
+            when { branch 'develop' }
             agent any
             steps {
                 build job: 'demo-app-cucumber'
