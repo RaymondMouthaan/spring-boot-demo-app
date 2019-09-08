@@ -11,7 +11,7 @@ pipeline {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
           args '-v /var/jenkins_home/.m2:/root/.m2:z -u root'
-          reuseNode true
+//          reuseNode true
         }
 
       }
@@ -25,7 +25,7 @@ pipeline {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
           args '-v /var/jenkins_home/.m2:/root/.m2:z -u root'
-          reuseNode true
+//          reuseNode true
         }
 
       }
@@ -48,7 +48,7 @@ pipeline {
       agent {
         docker {
           image 'maven:3.6.1-jdk-11-slim'
-          args '-v /var/jenkins_home/.m2:/root/.m2:z -u root'
+//          args '-v /var/jenkins_home/.m2:/root/.m2:z -u root'
           reuseNode true
         }
 
