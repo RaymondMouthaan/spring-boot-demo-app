@@ -123,16 +123,13 @@ pipeline {
 //      }
 //    }
   }
-  post {
-    always {
-      script {
-        if (dockerContainer) {
-          dockerContainer.stop()
-        }
-      }
-
-
-    }
-
-  }
+//  post {
+//    always {
+//      script {
+//        if (dockerContainer) {
+//          dockerContainer.stop()
+//        }
+//      }
+//    }
+//  }
 }
